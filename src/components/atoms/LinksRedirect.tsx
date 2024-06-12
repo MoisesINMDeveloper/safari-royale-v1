@@ -7,7 +7,10 @@ interface LinksProps {
 const LinkRedirect: React.FC<LinksProps> = ({ href, text, className }) => {
   return (
     <div className="px-2">
-      <Link className={` text-xs text-white ${className}`} href={href}>
+      <Link
+        className={` text-xs text-gray-100 hover:text-white ${className}`}
+        href={href}
+      >
         {text}
       </Link>
     </div>

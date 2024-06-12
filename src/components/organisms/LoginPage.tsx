@@ -6,7 +6,7 @@ import FormLogin from "../molecules/FormLogin";
 const LoginPage = () => {
   return (
     <article className="flex flex-col items-center w-screen h-screen py-12">
-      <div className="w-[8rem] h-[8rem] box-shadow rounded-full">
+      <div className="w-[8rem] h-[8rem]  rounded-full">
         <LogoRoyale />
       </div>
       <TextTitle name={"Bienvenido"} />

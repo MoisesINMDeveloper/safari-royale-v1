@@ -1,14 +1,14 @@
 "use client";
 
-import SigninPage from "@/components/organisms/SigninPage";
+import WelcomePage from "@/components/organisms/WelcomePage";
 import BackButton from "../components/atoms/BackButton";
 
-const SigninTemplate = () => {
+const LoginTemplate = () => {
   return (
     <main className="w-screen h-screen">
       <BackButton />
-      <SigninPage />
+      <WelcomePage />
     </main>
   );
 };
-export default SigninTemplate;
+export default LoginTemplate;
