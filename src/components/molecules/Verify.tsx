@@ -25,8 +25,7 @@ const VerifyTemplate = ({ from, email }: { from: string; email?: string }) => {
   const router = useRouter();
   const {
     getNewEmailConfirm,
-    updateUserInfo,
-    getPasswordToConfirm,
+
     loginState,
   } = useAuth();
 

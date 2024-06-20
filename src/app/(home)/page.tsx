@@ -1,12 +1,12 @@
 "use client";
-import { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import HomeTemplate from "@/templates/HomeTemplate";
-import WelcomeTemplate from "@/templates/WelcomeTemplate";
 import { UserData } from "../../../types";
 import { AUTH_GET_USER_DATA } from "@/constant/apiKeys";
-import axios from "axios";
+import WelcomeTemplate from "@/templates/WelcomeTemplate";
 
-export default function HomePage() {
+const HomePage: React.FC = () => {
   const [userData, setUserData] = useState<UserData | null>(null);
   const [username, setUsername] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(true);
@@ -14,16 +14,22 @@ export default function HomePage() {
   const fetchUserData = async () => {
     try {
       setLoading(true);
+      const token = localStorage.getItem("token");
+      if (!token) {
+        setLoading(false);
+        return;
+      }
+
       const response = await axios.get(
         `${process.env.API_URL}${AUTH_GET_USER_DATA}`,
         {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            Authorization: `Bearer ${token}`,
           },
         }
       );
       setUserData(response.data);
-      setUsername(response.data.username); // Asegúrate de que `username` exista en `UserData`
+      setUsername(response?.data?.username); // Asegúrate de que `username` exista en `UserData`
       setLoading(false);
     } catch (error) {
       console.error("Error fetching user data:", error);
@@ -35,21 +41,15 @@ export default function HomePage() {
     fetchUserData();
   }, []);
 
-  if (loading) {
-    return (
-      <div className="w-screen h-screen flex items-center justify-center">
-        Loading...
-      </div>
-    );
-  }
-
   if (userData === null) {
     return <WelcomeTemplate />;
   }
 
   return (
     <>
-      <HomeTemplate userData={userData} fetchUserData={fetchUserData} />
+      <HomeTemplate userData={userData} />
     </>
   );
-}
+};
+
+export default HomePage;

@@ -1,4 +1,5 @@
 "use client";
+
 import {
   createContext,
   useState,
@@ -14,7 +15,9 @@ interface UserInfoInterface {
   username: string;
   password: string;
   verified: boolean;
+  token?: string;
   _id: string;
+  role: string; // Añadir rol
 }
 
 interface AuthContextType {
@@ -26,30 +29,32 @@ interface AuthContextType {
   setUserInfo: Dispatch<SetStateAction<UserInfoInterface>>;
   passwordToConfirm: string;
   setPasswordToConfirm: Dispatch<SetStateAction<string>>;
-  loginState: (token: string) => void;
+  loginState: (token: string, role: string) => void;
   getToken: () => string | null;
 }
 
 export const AuthContext = createContext<AuthContextType | undefined>(
   undefined
 );
+
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [emailConfirm, setEmailConfirm] = useState<string>("");
   const [passwordToConfirm, setPasswordToConfirm] = useState<string>("");
-
   const [userInfo, setUserInfo] = useState<UserInfoInterface>({
     email: "",
     name: "",
     username: "",
-    verified: false,
     password: "",
+    token: "",
+    verified: false,
     _id: "",
+    role: "",
   });
 
-  const loginState = (token: string) => {
+  const loginState = (token: string, role: string) => {
     localStorage.setItem("token", token);
     setIsAuthenticated(true);
   };

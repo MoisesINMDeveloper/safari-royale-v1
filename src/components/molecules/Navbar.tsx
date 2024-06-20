@@ -4,12 +4,17 @@ import { IoClose } from "react-icons/io5";
 import LogoIconRoyale from "../atoms/LogoIconRoyale";
 import { useState } from "react";
 import MenuHam from "./MenuHam";
+import { UserData } from "../../../types";
 
-const Navbar = () => {
+interface NavbarProps {
+  userData: UserData;
+}
+const Navbar: React.FC<NavbarProps> = ({ userData }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
   return (
     <nav className="flex justify-between items-center w-screen px-4 pt-3 mb-6 glassEffect">
       <LogoIconRoyale />
@@ -18,7 +23,7 @@ const Navbar = () => {
           -
         </Link>
         <Link className="text-md text-white" href={"/deposit-or-withdrawal"}>
-          9.99 $
+          {userData.balance} $
         </Link>
         <Link
           className="text-2xl text-green-500"
@@ -46,7 +51,7 @@ const Navbar = () => {
           isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
-        <MenuHam />
+        <MenuHam userData={userData} />
       </div>
     </nav>
   );

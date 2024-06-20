@@ -1,23 +1,20 @@
 "use client";
-
+import React from "react";
 import Navbar from "@/components/molecules/Navbar";
 import { UserData } from "../../types";
 
 interface HomeTemplateProps {
   userData: UserData;
-  fetchUserData: () => Promise<void>;
 }
-const HomeTemplate: React.FC<HomeTemplateProps> = ({
-  userData,
-  fetchUserData,
-}) => {
+
+const HomeTemplate: React.FC<HomeTemplateProps> = ({ userData }) => {
   return (
     <main className="w-screen h-screen">
-      <Navbar />
+      <Navbar userData={userData} />
       <div className="flex flex-col items-center h-auto">
-        <h2 className=" text-2xl text-white  ">
+        <h2 className="text-2xl text-white">
           Bienvenido
-          <span className=" text-white px-2 font-poetsen font-black italic">
+          <span className="text-white px-2 font-poetsen font-black italic">
             ¡{userData.username}!
           </span>
         </h2>
@@ -25,4 +22,5 @@ const HomeTemplate: React.FC<HomeTemplateProps> = ({
     </main>
   );
 };
+
 export default HomeTemplate;

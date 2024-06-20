@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { UserData } from "../../../types";
 
 const menuItems = [
   { href: "/deposit-or-withdrawal", label: "Depositar" },
@@ -8,7 +9,10 @@ const menuItems = [
   { href: "/account", label: "Mi cuenta" },
 ];
 
-const MenuHam = () => {
+interface MenuHamProps {
+  userData: UserData;
+}
+const MenuHam: React.FC<MenuHamProps> = ({ userData }) => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     window.location.href = "/";
@@ -27,6 +31,11 @@ const MenuHam = () => {
             Salir
           </button>
         </li>
+        {userData.role === "ADMIN" && (
+          <li>
+            <Link href="/administration">Panel Administrador</Link>
+          </li>
+        )}
       </ul>
     </div>
   );

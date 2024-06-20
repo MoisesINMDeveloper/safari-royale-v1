@@ -31,9 +31,9 @@ const FormLogin: React.FC = () => {
         formData
       );
       if (response.status === 200) {
-        const { token, name } = response.data;
+        const { token, username, role } = response.data;
         localStorage.setItem("token", token);
-        updateUserInfo(name);
+        updateUserInfo(username);
         loginState(token);
         router.push("/");
       }
