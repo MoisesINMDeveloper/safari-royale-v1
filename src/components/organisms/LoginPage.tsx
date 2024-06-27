@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import TextTitle from "@/components/atoms/Text";
-import LogoRoyale from "../atoms/LogoRoyale";
-import FormLogin from "../molecules/FormLogin";
+import TextTitle from "@/components/atoms/Items/Text";
+import LogoRoyale from "../atoms/Logos/LogoRoyale";
+import FormLogin from "../molecules/Forms/FormLogin";
 const LoginPage = () => {
   return (
     <article className="flex flex-col items-center w-screen h-screen py-12">

@@ -1,5 +1,5 @@
-import ButtonRedirect from "../atoms/ButtonRedirect";
-import LogoRoyale from "../atoms/LogoRoyale";
+import ButtonRedirect from "../atoms/Buttons/ButtonRedirect";
+import LogoRoyale from "../atoms/Logos/LogoRoyale";
 const WelcomePage = () => {
   return (
     <section className="flex flex-col items-center justify-between w-screen h-screen py-12 px-6">

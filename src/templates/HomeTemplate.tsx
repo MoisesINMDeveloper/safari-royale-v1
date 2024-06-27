@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
-import Navbar from "@/components/molecules/Navbar";
+import Navbar from "@/components/molecules/Navigation/Navbar";
 import { UserData } from "../../types";
+import DailyRaffle from "@/components/molecules/Raffle/DailyRaffle";
 
 interface HomeTemplateProps {
   userData: UserData;
@@ -9,7 +10,7 @@ interface HomeTemplateProps {
 
 const HomeTemplate: React.FC<HomeTemplateProps> = ({ userData }) => {
   return (
-    <main className="w-screen h-screen">
+    <main className="w-screen h-screen flex-col-center gap-4">
       <Navbar userData={userData} />
       <div className="flex flex-col items-center h-auto">
         <h2 className="text-2xl text-white">
@@ -19,6 +20,7 @@ const HomeTemplate: React.FC<HomeTemplateProps> = ({ userData }) => {
           </span>
         </h2>
       </div>
+      <DailyRaffle />
     </main>
   );
 };

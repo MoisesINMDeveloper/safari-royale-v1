@@ -1,5 +1,5 @@
 import { Key } from "react";
-import NavItem from "../atoms/NavItem";
+import NavItem from "../atoms/Items/NavItem";
 
 const urlsLink = [
   { href: "/deposit-or-withdrawal", text: "Depositar" },

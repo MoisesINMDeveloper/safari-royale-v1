@@ -1,10 +1,10 @@
 "use client";
 
-import Input from "../atoms/Input";
-import LogoRoyale from "../atoms/LogoRoyale";
-import BackButton from "../atoms/BackButton";
-import Button from "../atoms/Button";
-import TextTitle from "../atoms/Text";
+import Input from "../../atoms/Inputs/Input";
+import LogoRoyale from "../../atoms/Logos/LogoRoyale";
+import BackButton from "../../atoms/Navigations/BackButton";
+import Button from "../../atoms/Buttons/Button";
+import TextTitle from "../../atoms/Items/Text";
 import { useEffect, useState } from "react";
 import { CircularProgress } from "@nextui-org/react";
 
@@ -12,8 +12,8 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "@/hooks/authContext";
 import { AUTH_VERIFY } from "@/constant/apiKeys";
 import axios from "axios";
-import VerificationErrorModal from "../modals/verify/VerificationErrorModal";
-import VerificationSuccessModal from "../modals/verify/VerificationSucessModal";
+import VerificationErrorModal from "../../modals/verify/VerificationErrorModal";
+import VerificationSuccessModal from "../../modals/verify/VerificationSucessModal";
 
 const VerifyTemplate = ({ from, email }: { from: string; email?: string }) => {
   const [showResendLink, setShowResendLink] = useState(false);

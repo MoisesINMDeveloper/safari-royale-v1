@@ -1,4 +1,4 @@
-import Loading from "@/components/atoms/Loading";
+import Loading from "@/components/atoms/Navigations/Loading";
 
 export default function Loader() {
   return <Loading />;

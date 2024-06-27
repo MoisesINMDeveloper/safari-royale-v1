@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { UserData } from "../../../types";
+import { UserData } from "../../../../types";
 
 const menuItems = [
   { href: "/deposit-or-withdrawal", label: "Depositar" },

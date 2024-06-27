@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
-import LogoIconRoyale from "../atoms/LogoIconRoyale";
+import LogoIconRoyale from "../../atoms/Logos/LogoIconRoyale";
 import { useState } from "react";
 import MenuHam from "./MenuHam";
-import { UserData } from "../../../types";
+import { UserData } from "../../../../types";
 
 interface NavbarProps {
   userData: UserData;

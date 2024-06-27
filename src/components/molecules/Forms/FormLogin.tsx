@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Input from "../atoms/Input";
-import Button from "../atoms/Button";
-import LinkRedirect from "../atoms/LinksRedirect";
+import Input from "../../atoms/Inputs/Input";
+import Button from "../../atoms/Buttons/Button";
+import LinkRedirect from "../../atoms/Navigations/LinksRedirect";
 import { useAuth } from "@/hooks/authContext";
 import { useRouter } from "next/navigation";
 import axios from "axios";
