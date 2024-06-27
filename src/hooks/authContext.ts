@@ -1,3 +1,5 @@
+"use client";
+
 import { AuthContext } from "../context/auth.context";
 import { useContext, useState } from "react";
 
@@ -47,8 +49,10 @@ export function useAuth() {
     username: string;
     password: string;
     email: string;
+    token?: string;
     verified: boolean;
     _id: string;
+    role: string; // Añadir rol a la función de actualización
   }) => {
     setUserInfo({
       name: data.name,
@@ -57,6 +61,8 @@ export function useAuth() {
       email: data.email,
       verified: data.verified,
       _id: data._id,
+      token: data.token,
+      role: data.role, // Actualizar rol
     });
   };
 

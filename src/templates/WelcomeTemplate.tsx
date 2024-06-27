@@ -1,7 +1,7 @@
 "use client";
 
 import WelcomePage from "@/components/organisms/WelcomePage";
-import BackButton from "../components/atoms/BackButton";
+import BackButton from "../components/atoms/Navigations/BackButton";
 
 const LoginTemplate = () => {
   return (

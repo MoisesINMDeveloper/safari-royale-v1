@@ -1,7 +1,7 @@
 "use client";
 
 import SignupPage from "@/components/organisms/SignupPage";
-import BackButton from "../components/atoms/BackButton";
+import BackButton from "../components/atoms/Navigations/BackButton";
 
 const SignupTemplate = () => {
   return (

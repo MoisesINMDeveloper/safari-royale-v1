@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import Input from "../atoms/Input";
-import Button from "../atoms/Button";
-import Check from "../atoms/Check";
+import Input from "../../atoms/Inputs/Input";
+import Button from "../../atoms/Buttons/Button";
+import Check from "../../atoms/Inputs/Check";
 import axios from "axios";
 import { AUTH_REGISTER } from "@/constant/apiKeys";
 import { useAuth } from "@/hooks/authContext";

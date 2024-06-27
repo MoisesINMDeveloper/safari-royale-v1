@@ -1,10 +1,15 @@
 export interface UserData {
   id: number;
   username: string;
-  name: string;
+  name: string | null;
   email: string;
+  dni: string | number | null;
+  phone: number | string | null;
   verified: boolean;
-  tasks: Task[];
+  bankName: string | null;
+  phoneCode: number | string | null;
+  balance: number;
+  role: string;
 }
 
 export interface UserError {

@@ -1,4 +1,4 @@
-import VerifyTemplate from "@/components/molecules/Verify";
+import VerifyTemplate from "@/components/molecules/Verify/Verify";
 
 const VerifyPage = () => {
   return <VerifyTemplate from="register" />;
